@@ -1,11 +1,11 @@
 import React from "react";
 import fakeApi from "../../pages/api/fake";
+import TaskListTableRow from "./taskListTableRow";
 
 const TaskList = ({ tasks }) => {
   console.log(tasks);
   return (
     <div className="flex justify-center items-center min-h-screen">
-      {/* <h1></h1> */}
       <div className="overflow-x-auto relative shadow-md sm:rounded-lg max-w-5xl">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <caption className="p-5 text-3xl font-semibold text-center text-gray-900 bg-white dark:text-white dark:bg-gray-800">
@@ -55,18 +55,12 @@ const TaskList = ({ tasks }) => {
               </td>
 
               <td className="py-4 px-6 text-right">
-                <a
-                  href="#"
-                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >
+                <button className="mr-2 font-medium text-blue-600 dark:text-blue-500 hover:underline">
                   Edit
-                </a>
-                <a
-                  href="#"
-                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >
+                </button>
+                <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                   Delete
-                </a>
+                </button>
               </td>
             </tr>
           </tbody>
@@ -79,7 +73,7 @@ const TaskList = ({ tasks }) => {
 export default TaskList;
 
 export const getServerSideProps = async () => {
-  const res = await fetch("http://localhost:3000/api/fake", {
+  const res = await fetch(fakeApi, {
     method: "GET",
   });
   const data = await res.json();

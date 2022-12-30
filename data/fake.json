@@ -3,12 +3,14 @@
 
         "id":"01",
         "taskDetail":"initial task 1",
-        "status":"completed"
+        "status":"completed",
+        "comment":""
     },
     {
 
         "id":"02",
         "taskDetail":"initial task 2",
-        "status":"not completed"
+        "status":"not completed",
+        "comment":""
     }
 ]
